@@ -9,9 +9,11 @@ mod utils;
 
 use gui::App;
 use std::path::PathBuf;
+use velopack::VelopackApp;
 
 fn main() {
     init_logger();
+    VelopackApp::build().run();
 
     let path = path_arg();
 
@@ -27,6 +29,7 @@ fn run_app(path: Option<PathBuf>) {
             Box::new(|cc| Box::new(App::new(cc, path))),
         )
         .expect("failed to start eframe");
+
     }
 
     #[cfg(target_arch = "wasm32")]

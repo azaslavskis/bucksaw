@@ -1,0 +1,1 @@
+vpk pack -u bucksaw -v 1.0.0 -p ./target/release -e bucksaw.exe

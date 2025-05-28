@@ -5,6 +5,8 @@ edition = "2021"
 repository = "https://github.com/KoffeinFlummi/bucksaw"
 
 [dependencies]
+velopack = { version = "0.0", features = ["async"] } 
+material-egui = "*"
 log = "0.4.21"
 anyhow = "1.0.86"
 itertools = "0.13.0"

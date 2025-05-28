@@ -20,6 +20,7 @@ use crate::gui::flight_view::*;
 use crate::gui::open_file::*;
 use crate::gui::tabs::*;
 use crate::log_file::*;
+use material_egui::MaterialColors;
 
 type FlightDataAndView = Vec<(Result<Arc<FlightData>, ParseError>, Option<FlightView>)>;
 
@@ -34,6 +35,9 @@ pub struct App {
 impl App {
     pub fn new(cc: &eframe::CreationContext, path: Option<PathBuf>) -> Self {
         egui_extras::install_image_loaders(&cc.egui_ctx);
+
+                // if you'd like the ability to scale windows AND a better default scale, use this
+MaterialColors::new(String::from("FF0000"), true, 1.5).apply(&cc.egui_ctx);
 
         let open_file_dialog = Some(OpenFileDialog::new(path));
         Self {
